@@ -1,8 +1,3 @@
-/*
-
-
-*/
-
 
 // function getCurIp(){	
 // 	$.ajax({

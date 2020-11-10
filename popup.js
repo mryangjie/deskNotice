@@ -31,7 +31,7 @@
 // }
 
 $(document).ready(function(){
-	// getCurIp();
+	
 	chrome.extension.sendMessage({cmd: "getNewsArr"},function(response) {
 		if(response.arr){
 			var len=response.arr.length;
@@ -39,12 +39,8 @@ $(document).ready(function(){
 				$('body').append("<br>"+response.arr[i]+'<br>');
 			}
 		}
-	});//
-	// $('input[type=button]').on('click',function(){
-	// 	var ntype=$(this).attr('id');
-	// 	chrome.extension.sendMessage({cmd: "notify",type:ntype},function(response) {			
-	// 	});
-	// })
+	});
+
 	function setinfo() {
 		var ntype="list";
 		chrome.extension.sendMessage({cmd: "notify",type:ntype},function(response) {			
@@ -52,8 +48,6 @@ $(document).ready(function(){
 	}
 
 	setTimeout(function () {
-		alert("1")
 		setinfo()
-	},2000)
-	
+	},1000)
 });
